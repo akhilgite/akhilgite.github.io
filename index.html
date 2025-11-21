@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ChartInk Screener App - A powerful intraday trading tool for Indian stock market traders">
+    <meta name="keywords" content="ChartInk, Screener, Stock Market, Intraday Trading, Indian Markets, Stock Analysis">
+    <meta name="author" content="Akhil Gite">
+    <title>ChartInk Screener App - Your Intraday Trading Companion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #34d399;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .download-btn:hover {
+            background-color: #10b981;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1em;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .privacy-section {
+            background: #e0e7ff;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .privacy-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .privacy-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .privacy-section ul li {
+            padding: 10px 0;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .privacy-section ul li:before {
+            content: "✓ ";
+            color: #34d399;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📈 ChartInk Screener App</h1>
+            <p>Your Ultimate Intraday Trading Companion for Indian Stock Markets</p>
+            <a href="https://play.google.com/store/apps/details?id=com.batcodes.chartinkk" class="download-btn" target="_blank">
+                📱 Download on Google Play
+            </a>
+        </header>
+
+        <div class="main-content">
+            <section class="section">
+                <h2>About ChartInk Screener</h2>
+                <p>
+                    For stock market enthusiasts, intraday trading can be both exciting and challenging. 
+                    The key to success lies in quick analysis and informed decisions. That's where the 
+                    <strong>ChartInk Screener App</strong> comes into play, a powerful tool designed 
+                    specifically for Indian traders to help them excel in intraday trading.
+                </p>
+                <p>
+                    The Intraday Screener App provides real-time analysis of stock movements, helping you 
+                    identify potential opportunities for buying and selling. With this app, you can easily 
+                    track stock prices, volume, and trends, enabling you to make better decisions on the go. 
+                    Whether you are a beginner or a seasoned trader, the app's user-friendly interface and 
+                    fast performance will enhance your trading experience.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon">⚡</div>
+                        <h3>Real-Time Analysis</h3>
+                        <p>Get instant analysis of stock movements with real-time data to make informed trading decisions.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🔔</div>
+                        <h3>Customized Alerts</h3>
+                        <p>Set alerts for specific stocks and price movements to never miss out on profitable trades.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">📊</div>
+                        <h3>Advanced Charting</h3>
+                        <p>Access advanced charting tools and technical indicators for effective stock analysis.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🇮🇳</div>
+                        <h3>Indian Markets Focus</h3>
+                        <p>Specifically designed for Indian stock markets with all relevant data and indicators.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">📱</div>
+                        <h3>User-Friendly Interface</h3>
+                        <p>Intuitive design makes it easy for both beginners and experienced traders to navigate.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🚀</div>
+                        <h3>Fast Performance</h3>
+                        <p>Lightning-fast app performance ensures you stay ahead in the fast-paced trading world.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>1K+</h3>
+                        <p>Downloads</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>3.4★</h3>
+                        <p>Rating</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Free</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Why Choose ChartInk Screener?</h2>
+                <p>
+                    With its focus on Indian markets, the ChartInk Screener App is the perfect companion for 
+                    traders looking to maximize their intraday gains. The app consolidates all essential trading 
+                    links and data in one convenient place, allowing you to monitor market movements efficiently 
+                    throughout the trading day.
+                </p>
+                <p>
+                    Download the app today and take control of your trading journey! Whether you're analyzing 
+                    charts, setting up alerts, or tracking your favorite stocks, ChartInk Screener gives you 
+                    the tools you need to succeed in the dynamic world of intraday trading.
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="privacy-section">
+                    <h3>🔒 Privacy & Security</h3>
+                    <ul>
+                        <li>No data shared with third parties</li>
+                        <li>No personal data collected</li>
+                        <li>Safe and secure trading environment</li>
+                        <li>Your privacy is our priority</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section" style="text-align: center;">
+                <h2>Ready to Get Started?</h2>
+                <p style="margin-bottom: 30px;">
+                    Join thousands of traders who trust ChartInk Screener for their intraday trading needs.
+                </p>
+                <a href="https://play.google.com/store/apps/details?id=com.batcodes.chartinkk" class="download-btn" target="_blank">
+                    📱 Download Now
+                </a>
+            </section>
+        </div>
+
+        <footer>
+            <p>© 2025 ChartInk Screener by Akhil Gite. All rights reserved.</p>
+            <p style="margin-top: 10px;">Designed for Indian Stock Market Traders</p>
+        </footer>
+    </div>
+</body>
+</html>
